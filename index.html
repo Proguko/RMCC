@@ -1,0 +1,95 @@
+<!--
+    +-----------------+
+    |Made by PeraProg8|
+    +-----------------+
+
+    https://www.youtube.com/watch?v=LKcatJ5rIqI
+-->
+
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>R.M.C.C.</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="resources/images/chocolate_emoji.png">
+        <div class="division" align="center">
+            <p style="margin-bottom: -30px;">Não uses auto-clicker <b>&circ;&smile;&circ;</b></p>
+            <h1>&sext; Raise, My Chocolate Clicker &sext;</h1>
+            <p style="margin-top: -20px;">Feito por Proguko</p>
+            <fieldset style="margin-top: -5px;">
+                <!--Música-->
+                <div>
+                    <div style="margin-bottom: -20px;">
+                        <label for="music-to-play">Música:</label>
+                        <input id="music-to-play" type="number" value="5" min="1" max="5"/>
+                        <button onclick="music.process('play')">&blacktriangleright;</button>
+                        <button onclick="music.process('stop')">&CloseCurlyDoubleQuote;</button>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: -6.5px;">Volume Geral:</p>
+                        <label for="sound-volume">0~</label>
+                        <input id="sound-volume" type="range" value="100" min="0" max="100"/>
+                        <label for="sound-volume">~100</label>
+                    </div>
+                </div>
+                <div>
+                    <button onclick="settings.soundvolume()">Alterar</button>
+                </div>
+            </fieldset>
+        </div>
+    </head>
+    <body onload="settings.soundvolume()">
+        <div class="division" align="center">
+            <fieldset style="margin-top: 10px;">
+                <hr>
+                <!--Botões-->
+                <div class="game-container">
+                    <!--Chocolate-->
+                    <button class="game-button" onclick="player.getchoc()">
+                        <img class="button-img" src="resources/images/chocolate_emoji.png">
+                    </button>
+                    <p id="choc-output">0&Cscr;</p>
+                    <!--Study-->
+                    <button class="game-button" onclick="player.study()">
+                        <img class="button-img" src="resources/images/books_emoji.png">
+                    </button>
+                    <p id="message-output" style="margin-bottom: -5px;">&circ;&sfrown;&circ;</p>
+                    <!--Money-->
+                    <button class="game-button" onclick="player.sellchoc()">
+                        <img class="button-img" src="resources/images/money_emoji.png">
+                    </button>
+                    <p id="money-output">0&dollar;</p>
+                    <!--Speech-->
+                    <button class="game-button" onclick="player.speech()">
+                        <img class="button-img" src="resources/images/speech_emoji.png">
+                    </button>
+                    <p id="influence-output">0%</p>
+                </div>
+                <hr>
+                <!--Progress-->
+                <h3>Dados:<br>Geral | Expansão:</h3>
+                <div class="progress-gap">
+                    <div>
+                        <label for="knowledge-bar">Sabedoria: </label><br>
+                        <progress id="knowledge-bar" value="20" min="0" max="100"></progress>
+                        <br>
+                        <label for="reputation-bar">Reputação: </label><br>
+                        <progress id="reputation-bar" value="10" min="0" max="160"></progress>
+                        <br>
+                        <label for="democrat-bar">Democratização: </label><br>
+                        <progress id="democrat-bar" value="10" min="0" max="100"></progress>
+                        <br>
+                        <label for="inflation-bar">Inflação: </label><br>
+                        <progress id="inflation-bar" value="0" min="0" max="200"></progress>
+                        <br>
+                    </div>
+                </div>
+                <hr>
+            </fieldset>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
